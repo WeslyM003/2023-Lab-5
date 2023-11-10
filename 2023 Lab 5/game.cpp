@@ -1,15 +1,16 @@
 //includes needed files and libraries
-#include "game.h"
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include <ctime>
+#include "game.h" //specification file
+#include <iostream> //input output
+#include <string> //needed for responses
+#include <cstdlib> //needed for R.N.G.
+#include <ctime> //needed for R.N.G.
 
 using namespace std;
 
 //constructor
 Game::Game()
 {
+	//variable used to play again, if it equals y then you keep playing, if it equals n then the game ends.
 	playAgain = "y";
 }
 
@@ -19,7 +20,7 @@ Game::~Game()
 }
 
 
-int Game::numGame() 
+int Game::numGame()
 {
 	int wins = 0;
 	int losses = 0;
@@ -36,7 +37,11 @@ int Game::numGame()
 
 		do
 		{
-			cout << num << endl;  //prints the number to guess for testing purposes, will be removed later
+
+
+
+
+			//cout << num << endl;  //prints the number to guess for testing purposes, will be removed later
 
 			cout << "Enter a guess between 1 and 100 : "; //inputs the guess
 			cin >> guess;
@@ -61,13 +66,13 @@ int Game::numGame()
 			}
 			else
 			{
-				cout << "Guess is not in range";
+				cout << "Guess is not in range" << endl;
 			}
 
 		} while (guess != num && tries <= 19);
 
 		//determines if the user wants to play again or exit the game.
-		cout << "Do you want to play again (Y/N): ";
+		cout << "Do you want to play again (Y/N): " << endl;
 		cin >> playAgain;
 	} while (playAgain == "y");
 
